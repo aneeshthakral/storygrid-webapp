@@ -24,8 +24,8 @@ export default function DotField({
   glowRadius = 220,
   cursorRadius = 360,
   cursorForce = 0.12,
-  gradientFrom = "#FF5A2E",
-  gradientTo = "#7A1F12",
+  gradientFrom = "#FF5C2B",
+  gradientTo = "#D42020",
   glowColor = "#1A0A08",
   className = "",
 }: Props) {

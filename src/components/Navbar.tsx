@@ -1,21 +1,13 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-
-const links = [
-  { to: "/services", label: "Services" },
-  { to: "/packages", label: "Packages" },
-  { to: "/company", label: "Company" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/case-studies", label: "Case Studies" },
-  { to: "/resources", label: "Resources" },
-] as const;
+import { mainNavLinks } from "@/data/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { location } = useRouterState();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -24,7 +16,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  const navLinks = mainNavLinks;
 
   return (
     <header
@@ -38,8 +34,8 @@ export default function Navbar() {
       <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-5 lg:px-10">
         <Logo />
 
-        <nav className="hidden items-center gap-9 lg:flex">
-          {links.map((l) => {
+        <nav className="hidden items-center gap-7 xl:gap-9 lg:flex">
+          {navLinks.map((l) => {
             const active = location.pathname === l.to;
             return (
               <Link
@@ -64,7 +60,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link to="/contact" className="btn-radial hidden sm:inline-flex !px-5 !py-2.5 !text-[0.65rem]">
-            Talk to us
+            Talk to Us
           </Link>
           <button
             aria-label="Menu"
@@ -76,15 +72,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={
           "overflow-hidden border-t border-white/5 bg-background/95 backdrop-blur-xl transition-[max-height] duration-500 lg:hidden " +
-          (open ? "max-h-[600px]" : "max-h-0")
+          (open ? "max-h-[700px]" : "max-h-0")
         }
       >
         <nav className="flex flex-col gap-1 px-5 py-6">
-          {links.map((l) => (
+          {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -94,7 +89,9 @@ export default function Navbar() {
               <span className="text-ember">→</span>
             </Link>
           ))}
-          <Link to="/contact" className="btn-radial mt-4 self-start">Talk to us</Link>
+          <Link to="/contact" className="btn-radial mt-4 self-start">
+            Talk to Us
+          </Link>
         </nav>
       </div>
     </header>

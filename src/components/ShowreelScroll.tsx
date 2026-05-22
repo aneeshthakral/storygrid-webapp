@@ -50,8 +50,8 @@ export default function ShowreelScroll() {
   };
 
   return (
-    <section ref={wrapRef} className="relative mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-      <div className="mb-12 flex items-end justify-between gap-6">
+    <section ref={wrapRef} className="relative mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-20">
+      {/* <div className="mb-12 flex items-end justify-between gap-6">
         <div>
           <p className="label-mono">The Showreel</p>
           <h2 className="mt-4 max-w-2xl text-4xl md:text-5xl">
@@ -62,10 +62,10 @@ export default function ShowreelScroll() {
           Scroll to play. The reel rises with you — the same way a category
           rises with its story.
         </p>
-      </div>
+      </div> */}
 
       <div
-        className="relative mx-auto aspect-video w-full max-w-6xl overflow-hidden border border-white/10 bg-black/40 shadow-[0_50px_120px_-40px_rgba(255,90,46,0.35)] will-change-transform"
+        className="relative mx-auto aspect-video w-full max-w-6xl overflow-hidden border border-white/10 bg-black/40 shadow-[0_50px_120px_-40px_rgba(255,92,43,0.35)] will-change-transform"
         style={{
           transform: `translate3d(0, ${translateY}px, 0) scale(${scale})`,
           borderRadius: `${radius}px`,
@@ -83,7 +83,7 @@ export default function ShowreelScroll() {
           ref={videoRef}
           className="h-full w-full object-cover"
           src="https://cdn.coverr.co/videos/coverr-typing-on-a-laptop-keyboard-0246/1080p.mp4"
-          poster="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80"
+          poster="https://media.istockphoto.com/id/2154500787/photo/3d-rendering-coming-soon-text-with-screen-effects-of-technological-glitches.jpg?s=1024x1024&w=is&k=20&c=KnKCnK9rkFs-Q8uLAbjgsXMM3cDtDs3ghlWNV954Ldo="
           loop
           muted
           playsInline
