@@ -66,10 +66,10 @@ export default function ContactPage() {
               className="card-tech space-y-5 p-7 md:p-9"
             >
               <div className="grid gap-5 md:grid-cols-2">
-                <Field label="Name" name="name" />
-                <Field label="Company" name="company" />
+                <Field label="Name" name="name" placeholder="Iron Man" />
+                <Field label="Company" name="company" placeholder="Avengers" />
               </div>
-              <Field label="Email" name="email" type="email" />
+              <Field label="Email" name="email" type="email" placeholder="ironman@avengers.com" />
               <div>
                 <label htmlFor="service" className="label-mono !text-muted-foreground">
                   Service interest
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   defaultValue=""
                 >
                   <option value="" disabled>
-                    Select an engagement
+                    Choose a service or engagement type
                   </option>
                   {serviceOptions.map((opt) => (
                     <option key={opt} value={opt}>
@@ -92,16 +92,19 @@ export default function ContactPage() {
                 </select>
               </div>
               <div>
-                <label className="label-mono !text-muted-foreground">
+                <label htmlFor="narrative" className="label-mono !text-muted-foreground">
                   Tell us about your narrative
                 </label>
                 <textarea
+                  id="narrative"
+                  name="narrative"
                   required
                   rows={5}
-                  className="mt-2 w-full resize-none rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition focus:border-blaze focus:ring-1 focus:ring-blaze"
+                  placeholder="What do you sell, who is it for, and where does your story break down today? Share pipeline goals, team size, or anything else that helps us prepare."
+                  className="mt-2 w-full resize-none rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground/60 focus:border-blaze focus:ring-1 focus:ring-blaze"
                 />
               </div>
-              <button type="submit" className="btn-radial btn-radial-solid">
+              <button type="submit" onClick={() => window.open("https://topmate.io/aneeshthakral", "_blank")} className="btn-radial btn-radial-solid">
                 {sent ? "Sent — talk soon" : "Book a discovery call"}
               </button>
               {sent && (
@@ -139,7 +142,7 @@ function Field({
         name={name}
         type={type}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition focus:border-blaze focus:ring-1 focus:ring-blaze"
+        className="mt-2 w-full rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground/60 focus:border-blaze focus:ring-1 focus:ring-blaze"
       />
     </div>
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DotField from "@/components/DotField";
-import LightSection from "@/components/LightSection";
+import HomeLightZone from "@/components/HomeLightZone";
 import Reveal from "@/components/Reveal";
 import ShowreelScroll from "@/components/ShowreelScroll";
 import PageRoutingCards from "@/components/PageRoutingCards";
@@ -21,10 +21,11 @@ export default function HomePage() {
   usePageTitle("StoryGrid & Co — Build the story that builds your pipeline");
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="home-page relative min-h-screen bg-background text-foreground">
+      <div className="home-light-rise" aria-hidden="true" />
       <Navbar />
 
-      <section className="relative isolate overflow-hidden pt-[68px]">
+      <section className="relative isolate z-[1] overflow-hidden pt-[68px]">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <DotField
             dotRadius={1.4}
@@ -40,7 +41,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/30 to-background" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-28 pt-24 lg:px-10 lg:pb-40 lg:pt-32">
+        <div className="relative mx-auto max-w-7xl px-5 pb-12 pt-24 lg:px-10 lg:pb-16 lg:pt-32">
           <Reveal>
             <p className="label-mono">AI-First Narrative Strategy Firm</p>
           </Reveal>
@@ -70,7 +71,7 @@ export default function HomePage() {
 
       <ShowreelScroll />
 
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
+      <section className="relative z-[1] mx-auto max-w-7xl px-5 pb-24 pt-12 lg:px-10 lg:pb-32 lg:pt-16">
         <Reveal>
           <p className="label-mono">Sound familiar?</p>
         </Reveal>
@@ -93,118 +94,120 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      <LightSection innerClassName="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-        <Reveal>
-          <p className="label-mono">The Compound Story Effect</p>
-        </Reveal>
-        <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-2xl leading-snug md:text-3xl">
-            Narrative, when architected as a system rather than produced as content, compounds
-            over time. It builds authority, trust, and pipeline simultaneously. One-off posts
-            decay. Systems compound.
-          </p>
-        </Reveal>
-        <Reveal delay={240}>
-          <Link to="/approach" className="btn-radial mt-10 inline-flex">
-            See the full approach
-          </Link>
-        </Reveal>
-      </LightSection>
-
-      <section className="border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
+      <HomeLightZone>
+        <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <p className="label-mono">Your path</p>
+            <p className="label-mono">The Compound Story Effect</p>
           </Reveal>
-          <Reveal delay={100}>
-            <h2 className="mt-5 text-4xl md:text-5xl">Audit → Sprint → Retainer</h2>
-          </Reveal>
-          <Reveal delay={180}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Start with a narrative audit, move into a sprint, or commit to a retainer that
-              compounds your story into pipeline. Every engagement is scoped before we start.
+          <Reveal delay={120}>
+            <p className="mt-8 max-w-3xl text-2xl leading-snug md:text-3xl">
+              Narrative, when architected as a system rather than produced as content, compounds
+              over time. It builds authority, trust, and pipeline simultaneously. One-off posts
+              decay. Systems compound.
             </p>
           </Reveal>
-          <Reveal delay={260}>
-            <Link to="/services" className="btn-radial mt-8 inline-flex">
-              View services
+          <Reveal delay={240}>
+            <Link to="/approach" className="btn-radial mt-10 inline-flex">
+              See the full approach
             </Link>
           </Reveal>
-        </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-        <Reveal>
-          <p className="label-mono">AI-first. Not AI-added.</p>
-        </Reveal>
-        <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-2xl leading-snug md:text-3xl">
-            Most agencies bolt AI onto existing workflows. We built our entire methodology around
-            it. AI sits inside the narrative process, from research to production to distribution.
-            The result: 2-3x faster output at equivalent or higher quality. You get premium
-            strategy at startup speed.
-          </p>
-        </Reveal>
-        <Reveal delay={240}>
-          <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] md:grid-cols-3">
-            {[
-              ["2-3x", "Faster production"],
-              ["AI-augmented", "At every stage"],
-              ["$6M+", "In deals closed using narrative"],
-            ].map(([v, l]) => (
-              <div key={l} className="bg-background/60 p-6 md:p-8">
-                <p className="font-display text-3xl text-foreground md:text-4xl">{v}</p>
-                <p className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
-                  {l}
-                </p>
-              </div>
-            ))}
+        <section className="">
+          <div className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
+            <Reveal>
+              <p className="label-mono">Your path</p>
+            </Reveal>
+            <Reveal delay={100}>
+              <h2 className="mt-5 text-4xl md:text-5xl">Audit → Sprint → Retainer</h2>
+            </Reveal>
+            <Reveal delay={180}>
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                Start with a narrative audit, move into a sprint, or commit to a retainer that
+                compounds your story into pipeline. Every engagement is scoped before we start.
+              </p>
+            </Reveal>
+            <Reveal delay={260}>
+              <Link to="/services" className="btn-radial mt-8 inline-flex">
+                View services
+              </Link>
+            </Reveal>
           </div>
-        </Reveal>
-      </section>
+        </section>
 
-      <LightSection innerClassName="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-        <Reveal>
-          <p className="label-mono">Built by a salesman. Not a marketer.</p>
-        </Reveal>
-        <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed md:text-xl">
-            Aneesh Thakral spent 8 years in B2B enterprise sales, closing $6M+ across US, EMEA,
-            and APAC. He didn&apos;t learn narrative from a textbook. He learned it deal by deal.
-            StoryGrid &amp; Co. exists because he saw what most agencies miss: story isn&apos;t a
-            marketing tactic. It&apos;s the sales infrastructure.
-          </p>
-        </Reveal>
-        <Reveal delay={240}>
-          <Link to="/story" className="btn-radial mt-10 inline-flex">
-            Read the full story
-          </Link>
-        </Reveal>
-      </LightSection>
-
-      <PageRoutingCards />
-
-      <section className="border-t border-white/5 bg-grain">
-        <div className="mx-auto max-w-7xl px-5 py-24 text-center lg:px-10 lg:py-32">
+        <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <h2 className="text-4xl text-balance md:text-5xl lg:text-6xl">
-              Your competitors are telling better stories. Let&apos;s change that.
-            </h2>
+            <p className="label-mono">AI-first. Not AI-added.</p>
           </Reveal>
-          <Reveal delay={160}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link to="/contact" className="btn-radial btn-radial-solid">
-                Book a discovery call
-              </Link>
-              <Link to="/services" className="btn-radial">
-                See services &amp; pricing
-              </Link>
+          <Reveal delay={120}>
+            <p className="mt-8 max-w-3xl text-2xl leading-snug md:text-3xl">
+              Most agencies bolt AI onto existing workflows. We built our entire methodology around
+              it. AI sits inside the narrative process, from research to production to distribution.
+              The result: 2-3x faster output at equivalent or higher quality. You get premium
+              strategy at startup speed.
+            </p>
+          </Reveal>
+          <Reveal delay={240}>
+            <div className="home-stats-grid mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl md:grid-cols-3">
+              {[
+                ["2-3x", "Faster production"],
+                ["AI-augmented", "At every stage"],
+                ["$6M+", "In deals closed using narrative"],
+              ].map(([v, l]) => (
+                <div key={l} className="home-stats-cell p-6 md:p-8">
+                  <p className="font-display text-3xl text-foreground md:text-4xl">{v}</p>
+                  <p className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
+                    {l}
+                  </p>
+                </div>
+              ))}
             </div>
           </Reveal>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
+        <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
+          <Reveal>
+            <p className="label-mono">Built by a salesman. Not a marketer.</p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mt-8 max-w-3xl text-lg leading-relaxed md:text-xl">
+              Aneesh Thakral spent 8 years in B2B enterprise sales, closing $6M+ across US, EMEA,
+              and APAC. He didn&apos;t learn narrative from a textbook. He learned it deal by deal.
+              StoryGrid &amp; Co. exists because he saw what most agencies miss: story isn&apos;t a
+              marketing tactic. It&apos;s the sales infrastructure.
+            </p>
+          </Reveal>
+          <Reveal delay={240}>
+            <Link to="/story" className="btn-radial mt-10 inline-flex">
+              Read the full story
+            </Link>
+          </Reveal>
+        </section>
+
+        <PageRoutingCards />
+
+        <section className="border-t border-border bg-grain home-light-cta">
+          <div className="mx-auto max-w-7xl px-5 py-24 text-center lg:px-10 lg:py-32">
+            <Reveal>
+              <h2 className="text-4xl text-balance md:text-5xl lg:text-6xl">
+                Your competitors are telling better stories. Let&apos;s change that.
+              </h2>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <Link to="/contact" className="btn-radial btn-radial-solid">
+                  Book a discovery call
+                </Link>
+                <Link to="/services" className="btn-radial">
+                  See services &amp; pricing
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <Footer />
+      </HomeLightZone>
     </div>
   );
 }

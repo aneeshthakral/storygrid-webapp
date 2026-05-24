@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
-import LightSection from "@/components/LightSection";
 
 type Variant = "dark" | "light" | "grain";
 
-const variantClass: Record<Exclude<Variant, "light">, string> = {
+const variantClass: Record<Variant, string> = {
   dark: "bg-background",
+  light: "border-t border-white/5 bg-background",
   grain: "border-t border-white/5 bg-grain",
 };
 
@@ -19,10 +19,6 @@ export function SectionShell({
   className?: string;
   bordered?: boolean;
 }) {
-  if (variant === "light") {
-    return <LightSection className={className}>{children}</LightSection>;
-  }
-
   return (
     <section
       className={

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Instagram } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import Logo from "./Logo";
 import { footerNavLinks, policyLinks } from "@/data/navigation";
+import { socialLinks } from "@/data/social";
+
+const socialIcons = {
+  linkedin: Linkedin,
+  instagram: Instagram,
+} as const;
 
 export default function Footer() {
   return (
@@ -45,22 +51,21 @@ export default function Footer() {
         <div>
           <p className="label-mono mb-5 !text-muted-foreground">Follow</p>
           <ul className="space-y-3">
-            <li>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2.5 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-ember"
-              >
-                <Linkedin size={14} /> LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2.5 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-ember"
-              >
-                <Instagram size={14} /> Instagram
-              </a>
-            </li>
+            {socialLinks.map((link) => {
+              const Icon = socialIcons[link.id];
+              return (
+                <li key={link.id}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-ember"
+                  >
+                    <Icon size={14} /> {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

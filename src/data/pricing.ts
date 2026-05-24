@@ -1,6 +1,6 @@
 export type Currency = "USD" | "INR";
 
-export const currencies: Currency[] = ["USD", "INR"];
+export const currencies: Currency[] = ["INR", "USD"];
 
 export type PriceMap = Record<Currency, string>;
 

@@ -27,7 +27,7 @@ export default function Navbar() {
       className={
         "fixed left-0 right-0 top-0 z-50 transition-all duration-500 " +
         (scrolled
-          ? "border-b border-white/5 bg-background/75 backdrop-blur-xl"
+          ? "border-b border-border bg-background/75 backdrop-blur-xl"
           : "bg-transparent")
       }
     >
@@ -74,7 +74,7 @@ export default function Navbar() {
 
       <div
         className={
-          "overflow-hidden border-t border-white/5 bg-background/95 backdrop-blur-xl transition-[max-height] duration-500 lg:hidden " +
+          "overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl transition-[max-height] duration-500 lg:hidden " +
           (open ? "max-h-[700px]" : "max-h-0")
         }
       >
