@@ -432,6 +432,22 @@ html.site-light--instant .home-light-rise {
   }
   .flicker { animation: flicker 2.4s ease-in-out infinite; }
 
+  /* Client logos infinite marquee */
+  .client-logos-marquee .logoloop__item img {
+    max-width: min(180px, 28vw);
+    opacity: 0.88;
+    filter: grayscale(0.15) brightness(1.05);
+    transition:
+      opacity 320ms ease,
+      filter 320ms ease,
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .client-logos-marquee .logoloop--scale-hover .logoloop__item:hover img {
+    opacity: 1;
+    filter: grayscale(0) brightness(1.1);
+  }
+
   /* Logo agent — icon-only animation */
   @keyframes logo-agent-float {
     0%, 100% { transform: translateY(0); }

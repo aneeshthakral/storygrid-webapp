@@ -5,6 +5,7 @@ import DotField from "@/components/DotField";
 import HomeLightZone from "@/components/HomeLightZone";
 import Reveal from "@/components/Reveal";
 import ShowreelScroll from "@/components/ShowreelScroll";
+import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import PageRoutingCards from "@/components/PageRoutingCards";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
@@ -93,6 +94,8 @@ export default function HomePage() {
           </p>
         </Reveal>
       </section>
+
+      <ClientLogosMarquee />
 
       <HomeLightZone>
         <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
