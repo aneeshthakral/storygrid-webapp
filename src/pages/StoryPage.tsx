@@ -1,3 +1,4 @@
+import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import PageLayout, { PageHeader } from "@/components/PageLayout";
 import Reveal from "@/components/Reveal";
 import PageCTA from "@/components/sections/PageCTA";
@@ -111,6 +112,7 @@ export default function StoryPage() {
           </div>
         </Reveal>
       </SectionShell>
+      <ClientLogosMarquee />
 
       <SectionShell variant="grain">
         <Reveal>

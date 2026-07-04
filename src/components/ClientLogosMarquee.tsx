@@ -10,7 +10,7 @@ export default function ClientLogosMarquee() {
     >
       <Reveal>
         <p id="client-logos-heading" className="label-mono text-center">
-          Trusted by teams we&apos;ve worked with
+          Our Collaborators
         </p>
       </Reveal>
 
