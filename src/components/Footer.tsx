@@ -73,15 +73,11 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 border-t border-white/5 px-5 py-6 text-[0.7rem] text-muted-foreground md:flex-row md:items-center lg:px-10">
         <p>© 2026 StoryGrid &amp; Co. All rights reserved.</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono uppercase tracking-[0.22em]">
-          {/* <span className="text-muted-foreground/60">Policies</span> */}
           {policyLinks.map(({ to, label }) => (
             <Link key={to} to={to} className="hover:text-ember">
               {label}
             </Link>
           ))}
-          {/* <a href="#" className="hover:text-ember">
-            Terms of Service
-          </a> */}
         </div>
       </div>
     </footer>

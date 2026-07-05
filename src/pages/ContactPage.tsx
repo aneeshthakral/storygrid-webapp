@@ -11,6 +11,8 @@ const serviceOptions = [
   "Narrative Engine",
   "Narrative System",
   "Team Workshop",
+  "Surface (Build & AI Automation)",
+  "Signal (AEO, Search & Paid Media)",
   "Enterprise",
 ];
 
@@ -66,10 +68,10 @@ export default function ContactPage() {
               className="card-tech space-y-5 p-7 md:p-9"
             >
               <div className="grid gap-5 md:grid-cols-2">
-                <Field label="Name" name="name" placeholder="Iron Man" />
-                <Field label="Company" name="company" placeholder="Avengers" />
+                <Field label="Name" name="name" placeholder="Alex Morgan" />
+                <Field label="Company" name="company" placeholder="Meridian Technologies" />
               </div>
-              <Field label="Email" name="email" type="email" placeholder="ironman@avengers.com" />
+              <Field label="Email" name="email" type="email" placeholder="alex@meridiantech.co" />
               <div>
                 <label htmlFor="service" className="label-mono !text-muted-foreground">
                   Service interest

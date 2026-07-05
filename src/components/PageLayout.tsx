@@ -43,10 +43,6 @@ export function PageHeader({
 export function WhereToGoNext() {
   const items = [
     { to: "/services", title: "Services", desc: "Narrative architecture, content systems, and ongoing strategic execution for growth-stage companies." },
-    { to: "/packages", title: "Packages", desc: "Three monthly retainers and two one-time engagements. Natural client journey from audit to full narrative system." },
-    { to: "/company", title: "Company", desc: "AI-first narrative strategy firm at the intersection of AI-augmented content production and founder-led narrative architecture." },
-    { to: "/portfolio", title: "Portfolio", desc: "Proof of work. Before-and-after metrics. Case studies and narrative transformations." },
-    { to: "/case-studies", title: "Case Studies", desc: "Real results from narrative-led strategy across growth-stage B2B companies." },
     { to: "/resources", title: "Resources", desc: "Frameworks, guides, and tools for building narrative-led growth." },
   ];
   return (
