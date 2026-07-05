@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /work-policy
+
+Sitemap: https://storygrid.co/sitemap.xml
