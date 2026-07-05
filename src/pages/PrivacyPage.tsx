@@ -10,7 +10,7 @@ const sections: PolicySection[] = [
   {
     id: "data-collect",
     title: "Data we collect",
-    body: "We may collect your name, email address, company name, service interest selections, and any information you submit through our contact form, newsletter signup, or resource download forms. We also collect technical data such as IP address, browser type, and pages visited through cookies and analytics tools.",
+    body: "We may collect your name, email address, company name, service interest selections, and any information you submit through our contact form. No analytics tools currently run on this site and no analytics data is collected.",
   },
   {
     id: "how-we-use",
@@ -25,17 +25,17 @@ const sections: PolicySection[] = [
   {
     id: "cookies",
     title: "Cookies and tracking",
-    body: "We use cookies and similar technologies for essential site functionality and analytics. You may control cookies through your browser settings. [TO CONFIRM: Analytics tool name, cookie type, IP anonymization status]",
+    body: "No analytics tool currently runs on this site. No tracking cookies are set. This site uses only cookies that are essential for basic site functionality. You may control cookies through your browser settings.",
   },
   {
     id: "third-party",
     title: "Third-party processors and data sharing",
-    body: "We share data with service providers who help us operate our website and communications, including [TO CONFIRM: Contact form provider name + country] and [TO CONFIRM: Email/newsletter provider name + country]. These processors are bound by contractual obligations to protect your data.",
+    body: "We share data with service providers who help us operate our website and communications. Contact form submissions are processed by Web3Forms (web3forms.com/privacy), operated in the United States. Newsletter subscriptions are managed by Substack (substack.com/privacy), operated in the United States. These processors are bound by contractual obligations to protect your data.",
   },
   {
     id: "retention",
     title: "Data retention periods",
-    body: "Contact form submissions: [TO CONFIRM retention period]. Newsletter subscribers: [TO CONFIRM retention period]. Analytics data: [TO CONFIRM — GA4 default is 14 months].",
+    body: "Contact form submissions are retained for up to 12 months. Newsletter subscriber data is managed by Substack per their retention policy. No analytics data is collected.",
   },
   {
     id: "transfers",
@@ -69,7 +69,7 @@ const sections: PolicySection[] = [
       <>
         Email{" "}
         <a href="mailto:hello@storygrid.co">hello@storygrid.co</a> for privacy-related requests.
-        Physical address: [TO CONFIRM]. Effective date: [TO CONFIRM].
+        Registered address available on request. Contact: hello@storygrid.co. Effective date: 6 July 2026.
       </>
     ),
   },
