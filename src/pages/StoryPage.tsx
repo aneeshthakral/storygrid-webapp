@@ -1,4 +1,3 @@
-import ClientLogosMarquee from "@/components/ClientLogosMarquee";
 import PageLayout, { PageHeader } from "@/components/PageLayout";
 import Reveal from "@/components/Reveal";
 import PageCTA from "@/components/sections/PageCTA";
@@ -29,7 +28,7 @@ const arcSections = [
 ];
 
 export default function StoryPage() {
-  usePageTitle("Story — StoryGrid & Co");
+  usePageTitle("Story — StoryGrid & Co.");
 
   return (
     <PageLayout>
@@ -84,35 +83,6 @@ export default function StoryPage() {
           </div>
         </div>
       </SectionShell>
-
-      <SectionShell variant="light">
-        <Reveal>
-          <SectionHeading
-            label="Today"
-            title="Current roles"
-            intro="Dual role: Founder at StoryGrid & Co. and Associate Director International Sales at a manufacturing company. Both roles compound. One gives the live testbed, the other is where the field-tested thinking goes."
-          />
-        </Reveal>
-        <Reveal delay={140}>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <article className="card-tech p-7">
-              <p className="label-mono !text-muted-foreground">StoryGrid &amp; Co.</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                AI-first narrative strategy for founders and commercial teams building pipeline
-                through story systems.
-              </p>
-            </article>
-            <article className="card-tech p-7">
-              <p className="label-mono !text-muted-foreground">International sales</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Live deal cycles, CXO conversations, and the daily proof that narrative is sales
-                infrastructure.
-              </p>
-            </article>
-          </div>
-        </Reveal>
-      </SectionShell>
-      <ClientLogosMarquee />
 
       <SectionShell variant="grain">
         <Reveal>

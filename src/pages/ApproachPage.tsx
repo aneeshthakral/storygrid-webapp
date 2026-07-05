@@ -53,7 +53,7 @@ const differentiators = [
 ];
 
 export default function ApproachPage() {
-  usePageTitle("Approach — StoryGrid & Co");
+  usePageTitle("Approach — StoryGrid & Co.");
 
   return (
     <PageLayout>

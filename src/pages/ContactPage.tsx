@@ -4,6 +4,8 @@ import Reveal from "@/components/Reveal";
 import SocialLinks from "@/components/SocialLinks";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
+const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_KEY";
+
 const serviceOptions = [
   "Narrative Audit",
   "Narrative Sprint",
@@ -11,19 +13,64 @@ const serviceOptions = [
   "Narrative Engine",
   "Narrative System",
   "Team Workshop",
+  "Surface (Build & AI Automation)",
+  "Signal (AEO, Search & Paid Media)",
   "Enterprise",
 ];
 
 export default function ContactPage() {
-  usePageTitle("Talk to Us — StoryGrid & Co");
+  usePageTitle("Talk to Us — StoryGrid & Co.");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = data.get("name") as string;
+    const company = data.get("company") as string;
+    const email = data.get("email") as string;
+    const service = data.get("service") as string;
+    const narrative = data.get("narrative") as string;
+
+    if (WEB3FORMS_ACCESS_KEY === "REPLACE_WITH_KEY") {
+      openMailto(name, company, email, service, narrative);
+      setSent(true);
+      setSending(false);
+      return;
+    }
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name,
+          company,
+          email,
+          service,
+          message: narrative,
+        }),
+      });
+      if (!res.ok) throw new Error("Web3Forms error");
+      setSent(true);
+    } catch {
+      openMailto(name, company, email, service, narrative);
+      setSent(true);
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <PageLayout>
       <PageHeader
         eyebrow="Talk to Us"
         title={<>Book a discovery call</>}
-        intro="Tell us where you are and where you want your narrative to be. We respond within 48 hours."
+        intro="Tell us where you are and where you want your narrative to be. We respond within 24 hours."
       />
 
       <section className="mx-auto max-w-5xl px-5 py-20 lg:px-10 lg:py-28">
@@ -54,22 +101,30 @@ export default function ContactPage() {
                   than rent attention.
                 </p>
               </div>
+              <div>
+                <p className="label-mono">Book directly</p>
+                <a
+                  href="https://topmate.io/aneeshthakral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-radial mt-3 inline-flex"
+                >
+                  Open Topmate
+                </a>
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
+              onSubmit={handleSubmit}
               className="card-tech space-y-5 p-7 md:p-9"
             >
               <div className="grid gap-5 md:grid-cols-2">
-                <Field label="Name" name="name" placeholder="Iron Man" />
-                <Field label="Company" name="company" placeholder="Avengers" />
+                <Field label="Name" name="name" placeholder="Alex Morgan" />
+                <Field label="Company" name="company" placeholder="Meridian Technologies" />
               </div>
-              <Field label="Email" name="email" type="email" placeholder="ironman@avengers.com" />
+              <Field label="Email" name="email" type="email" placeholder="alex@meridiantech.co" />
               <div>
                 <label htmlFor="service" className="label-mono !text-muted-foreground">
                   Service interest
@@ -104,12 +159,16 @@ export default function ContactPage() {
                   className="mt-2 w-full resize-none rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground/60 focus:border-blaze focus:ring-1 focus:ring-blaze"
                 />
               </div>
-              <button type="submit" onClick={() => window.open("https://topmate.io/aneeshthakral", "_blank")} className="btn-radial btn-radial-solid">
-                {sent ? "Sent — talk soon" : "Book a discovery call"}
+              <button
+                type="submit"
+                disabled={sending}
+                className="btn-radial btn-radial-solid disabled:opacity-60"
+              >
+                {sending ? "Sending..." : sent ? "Sent — talk soon" : "Send message"}
               </button>
               {sent && (
                 <p className="text-sm text-muted-foreground">
-                  Thanks — we&apos;ll be back within 48 hours.
+                  Thanks — we respond within 24 hours.
                 </p>
               )}
             </form>
@@ -118,6 +177,20 @@ export default function ContactPage() {
       </section>
     </PageLayout>
   );
+}
+
+function openMailto(
+  name: string,
+  company: string,
+  email: string,
+  service: string,
+  narrative: string,
+) {
+  const subject = encodeURIComponent(`Inquiry from ${name} at ${company}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\n${narrative}`,
+  );
+  window.location.href = `mailto:hello@storygrid.co?subject=${subject}&body=${body}`;
 }
 
 function Field({

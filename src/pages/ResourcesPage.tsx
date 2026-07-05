@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import PageLayout, { PageHeader } from "@/components/PageLayout";
 import Reveal from "@/components/Reveal";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 export default function ResourcesPage() {
-  usePageTitle("Resources — StoryGrid & Co");
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [downloadEmail, setDownloadEmail] = useState("");
-  const [newsletterDone, setNewsletterDone] = useState(false);
-  const [downloadDone, setDownloadDone] = useState(false);
+  usePageTitle("Resources — StoryGrid & Co.");
 
   return (
     <PageLayout>
@@ -27,30 +22,18 @@ export default function ResourcesPage() {
               <h2 className="mt-4 text-2xl text-foreground">The AI Salesman</h2>
               <p className="mt-2 text-sm text-muted-foreground">Weekly newsletter by Aneesh Thakral</p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/85">
-                AI x Sales x Storytelling. Every Friday.
+                AI x Sales x Storytelling. Every Thursday.
               </p>
-              <form
-                className="mt-6 space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setNewsletterDone(true);
-                }}
-              >
-                <input
-                  type="email"
-                  required
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="w-full rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition focus:border-ember focus:ring-1 focus:ring-ember"
-                />
-                <button type="submit" className="btn-radial btn-radial-solid">
-                  {newsletterDone ? "Subscribed" : "Subscribe"}
-                </button>
-              </form>
-              <p className="mt-4 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground">
-                Join 0 founders who read this.
-              </p>
+              <div className="mt-6">
+                <a
+                  href="https://substack.com/@aneeshthakral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-radial btn-radial-solid inline-flex"
+                >
+                  Read on Substack
+                </a>
+              </div>
             </article>
           </Reveal>
 
@@ -61,25 +44,15 @@ export default function ResourcesPage() {
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 10 questions to diagnose whether your story is costing you deals.
               </p>
-              <form
-                className="mt-6 space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setDownloadDone(true);
-                }}
-              >
-                <input
-                  type="email"
-                  required
-                  value={downloadEmail}
-                  onChange={(e) => setDownloadEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="w-full rounded-md border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition focus:border-ember focus:ring-1 focus:ring-ember"
-                />
-                <button type="submit" className="btn-radial">
-                  {downloadDone ? "Check your inbox" : "Download"}
-                </button>
-              </form>
+              <div className="mt-6">
+                <a
+                  href="/narrative-audit-checklist.pdf"
+                  download
+                  className="btn-radial inline-flex"
+                >
+                  Download
+                </a>
+              </div>
             </article>
           </Reveal>
         </div>

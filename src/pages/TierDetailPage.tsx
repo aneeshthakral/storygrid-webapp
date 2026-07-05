@@ -13,7 +13,7 @@ export default function TierDetailPage() {
   const [currency, setCurrency] = useCurrency();
 
   usePageTitle(
-    tier ? `${tier.name} — StoryGrid & Co` : "Services — StoryGrid & Co",
+    tier ? `${tier.name} — StoryGrid & Co.` : "Services — StoryGrid & Co.",
   );
 
   if (!tier) {

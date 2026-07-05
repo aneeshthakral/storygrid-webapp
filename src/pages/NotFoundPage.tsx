@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 export default function NotFoundPage() {
-  usePageTitle("Page not found — StoryGrid & Co");
+  usePageTitle("Page not found — StoryGrid & Co.");
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">

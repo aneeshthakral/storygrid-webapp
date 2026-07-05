@@ -44,31 +44,15 @@ export function SectionHeading({
   intro?: ReactNode;
   align?: "left" | "center";
 }) {
-  const isCenter = align === "center";
+  const alignClass = align === "center" ? "text-center mx-auto" : "";
   return (
-    <div className={"max-w-3xl " + (isCenter ? "text-center mx-auto" : "")}>
-      <div
-        className={
-          "flex items-center gap-4 " + (isCenter ? "justify-center" : "")
-        }
-      >
-        <span className="h-px w-12 bg-ember" />
-        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.4em] text-ember">
-          {label}
-        </span>
-      </div>
-      <h2
-        className={
-          "mt-6 text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl " +
-          (isCenter ? "mx-auto" : "")
-        }
-      >
+    <div className={"max-w-3xl " + alignClass}>
+      <p className="label-mono">{label}</p>
+      <h2 className={"mt-5 text-4xl text-balance md:text-5xl " + (align === "center" ? "mx-auto" : "")}>
         {title}
       </h2>
       {intro && (
-        <p className="mt-7 text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
-          {intro}
-        </p>
+        <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">{intro}</p>
       )}
     </div>
   );

@@ -7,14 +7,14 @@
 /* ----------------------------------------------------------------------------
  * StoryGrid & Co - Design System
  * Dark theme with controlled-combustion orange/red accent.
- * Display: Sora. Mono captions: JetBrains Mono. Body: Inter.
+ * Display: Bricolage Grotesque. Body: Satoshi. Mono captions: JetBrains Mono.
  * -------------------------------------------------------------------------- */
 
 @font-face { font-family: system; src: local("system"); }
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Sora", "Inter", sans-serif;
+  --font-sans: "Satoshi", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -46,9 +46,19 @@
   --color-ember: var(--ember);
   --color-ember-soft: var(--ember-soft);
   --color-blaze: var(--blaze);
+  --color-blaze-muted: var(--blaze-muted);
   --color-blaze-glow: var(--blaze-glow);
   --color-infrared: var(--infrared);
   --color-warm-glow: var(--warm-glow);
+  --color-deep-base: var(--deep-base);
+  --color-card-surface: var(--card-surface);
+  --color-elevated: var(--elevated);
+  --color-section-break: var(--section-break);
+  --color-ai-teal: var(--ai-teal);
+  --color-ai-teal-muted: var(--ai-teal-muted);
+  --color-founder-gold: var(--founder-gold);
+  --color-cool-smoke: var(--cool-smoke);
+  --color-smoke-muted: var(--smoke-muted);
 }
 
 :root {
@@ -67,10 +77,21 @@
   --popover-dark: oklch(0.165 0.014 25);
   --popover-foreground: oklch(0.96 0.012 60);
   /* Blaze brand palette */
-  --blaze: #c43d1a;
+  --blaze: #E8451A;
+  --blaze-muted: #C43D1A;
   --blaze-glow: #ff5c2b;
   --infrared: #d42020;
   --warm-glow: #ff8040;
+  /* Extended brand tokens */
+  --deep-base: #080507;
+  --card-surface: #141012;
+  --elevated: #1E181C;
+  --section-break: #F0E8E2;
+  --ai-teal: #2DD881;
+  --ai-teal-muted: #1A6B45;
+  --founder-gold: #D4912A;
+  --cool-smoke: #4A6080;
+  --smoke-muted: #2A3848;
   --primary: var(--blaze);
   --primary-foreground: oklch(0.99 0 0);
   --ember: var(--blaze);
@@ -233,7 +254,7 @@ html.site-light--instant .home-light-rise {
 
   ::selection {
     background: var(--blaze);
-    color: white;
+    color: var(--section-break);
   }
 
   h1, h2, h3, h4 {
@@ -431,22 +452,6 @@ html.site-light--instant .home-light-rise {
     50% { opacity: 0.4; }
   }
   .flicker { animation: flicker 2.4s ease-in-out infinite; }
-
-  /* Client logos infinite marquee */
-  .client-logos-marquee .logoloop__item img {
-    max-width: min(180px, 28vw);
-    opacity: 0.88;
-    filter: grayscale(0.15) brightness(1.05);
-    transition:
-      opacity 320ms ease,
-      filter 320ms ease,
-      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .client-logos-marquee .logoloop--scale-hover .logoloop__item:hover img {
-    opacity: 1;
-    filter: grayscale(0) brightness(1.1);
-  }
 
   /* Logo agent — icon-only animation */
   @keyframes logo-agent-float {

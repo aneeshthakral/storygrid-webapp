@@ -1,6 +1,6 @@
-export type Currency = "USD" | "INR";
+export type Currency = "USD" | "INR" | "EUR";
 
-export const currencies: Currency[] = ["INR", "USD"];
+export const currencies: Currency[] = ["INR", "USD", "EUR"];
 
 export type PriceMap = Record<Currency, string>;
 
@@ -28,7 +28,7 @@ export const oneTimeEngagements = [
   {
     id: "audit",
     name: "The Narrative Audit",
-    prices: { USD: "$499", INR: "₹39,950" },
+    prices: { USD: "$499", INR: "₹38,950", EUR: "€469" },
     description:
       "A complete audit of your current narrative, positioning, and content. Strengths, gaps, and a 30-day path forward. Delivered in two weeks.",
     cta: "Book your engagement",
@@ -36,7 +36,7 @@ export const oneTimeEngagements = [
   {
     id: "sprint",
     name: "The Narrative Sprint",
-    prices: { USD: "$1,999", INR: "₹1,64,950" },
+    prices: { USD: "$1,999", INR: "₹1,64,950", EUR: "€1,899" },
     description:
       "Two-week intensive voice extraction, positioning, and a 30-day LinkedIn strategy you can hand to any operator. Delivered ready to ship.",
     cta: "Book this engagement",
@@ -49,7 +49,7 @@ export const monthlyRetainers = [
     tier: "01",
     name: "Narrative Starter",
     badge: null as string | null,
-    prices: { USD: "$999", INR: "₹79,950" },
+    prices: { USD: "$999", INR: "₹78,950", EUR: "€949" },
     minimum: "3 mo",
     bestFor:
       "Early-stage founders who need a clear, ownable narrative before scaling content.",
@@ -93,7 +93,7 @@ export const monthlyRetainers = [
     tier: "02",
     name: "Narrative Engine",
     badge: "Most Chosen",
-    prices: { USD: "$2,499", INR: "₹1,99,950" },
+    prices: { USD: "$2,499", INR: "₹1,98,950", EUR: "€2,399" },
     minimum: "3 mo",
     bestFor:
       "Growth-stage founders building a content system that compounds into pipeline.",
@@ -137,7 +137,7 @@ export const monthlyRetainers = [
     tier: "03",
     name: "Narrative System",
     badge: null,
-    prices: { USD: "$4,999", INR: "₹3,99,950" },
+    prices: { USD: "$4,999", INR: "₹3,98,950", EUR: "€4,799" },
     minimum: "6 mo",
     bestFor:
       "Growth-stage companies ready to own their narrative category across every channel.",
@@ -247,7 +247,7 @@ export function getTierById(tierId: string | undefined) {
 
 export const teamWorkshop = {
   name: "Team Narrative Workshop",
-  prices: { USD: "$2,499", INR: "₹1,99,950" },
+  prices: { USD: "$2,499", INR: "₹1,98,950", EUR: "€2,399" },
   bestFor: "Teams of 5–25 in sales, marketing, or customer-facing roles.",
 };
 
