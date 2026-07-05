@@ -49,7 +49,7 @@ const includes = [
 ];
 
 export default function ForTeamsPage() {
-  usePageTitle("For Teams — StoryGrid & Co");
+  usePageTitle("For Teams — StoryGrid & Co.");
   const [currency, setCurrency] = useCurrency();
 
   return (

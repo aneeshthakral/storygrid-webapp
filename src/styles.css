@@ -7,7 +7,7 @@
 /* ----------------------------------------------------------------------------
  * StoryGrid & Co - Design System
  * Dark theme with controlled-combustion orange/red accent.
- * Display: Sora. Mono captions: JetBrains Mono. Body: Inter.
+ * Display: Bricolage Grotesque. Body: Satoshi. Mono captions: JetBrains Mono.
  * -------------------------------------------------------------------------- */
 
 @font-face { font-family: system; src: local("system"); }
@@ -254,7 +254,7 @@ html.site-light--instant .home-light-rise {
 
   ::selection {
     background: var(--blaze);
-    color: white;
+    color: var(--section-break);
   }
 
   h1, h2, h3, h4 {

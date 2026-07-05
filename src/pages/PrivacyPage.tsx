@@ -76,7 +76,7 @@ const sections: PolicySection[] = [
 ];
 
 export default function PrivacyPage() {
-  usePageTitle("Privacy Policy — StoryGrid & Co");
+  usePageTitle("Privacy Policy — StoryGrid & Co.");
 
   return (
     <PolicyDocument

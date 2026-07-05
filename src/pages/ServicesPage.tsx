@@ -18,7 +18,7 @@ const pricedTiers = monthlyRetainers.filter((t) => t.prices !== null);
 const commandTier = monthlyRetainers.find((t) => t.id === "command");
 
 export default function ServicesPage() {
-  usePageTitle("Services & Pricing — StoryGrid & Co");
+  usePageTitle("Services & Pricing — StoryGrid & Co.");
   const [currency, setCurrency] = useCurrency();
 
   return (

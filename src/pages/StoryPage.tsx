@@ -28,7 +28,7 @@ const arcSections = [
 ];
 
 export default function StoryPage() {
-  usePageTitle("Story — StoryGrid & Co");
+  usePageTitle("Story — StoryGrid & Co.");
 
   return (
     <PageLayout>

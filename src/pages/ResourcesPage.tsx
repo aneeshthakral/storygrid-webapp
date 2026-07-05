@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 export default function ResourcesPage() {
-  usePageTitle("Resources — StoryGrid & Co");
+  usePageTitle("Resources — StoryGrid & Co.");
 
   return (
     <PageLayout>

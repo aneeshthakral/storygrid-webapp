@@ -51,7 +51,7 @@ const sections: PolicySection[] = [
 ];
 
 export default function WorkPolicyPage() {
-  usePageTitle("Work Policy — StoryGrid & Co", { robots: "noindex, nofollow" });
+  usePageTitle("Work Policy — StoryGrid & Co.", { robots: "noindex, nofollow" });
 
   return (
     <PolicyDocument

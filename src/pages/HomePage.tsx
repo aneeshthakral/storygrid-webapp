@@ -18,7 +18,7 @@ const painPoints = [
 ];
 
 export default function HomePage() {
-  usePageTitle("StoryGrid & Co — Build the story that builds your pipeline");
+  usePageTitle("StoryGrid & Co. — Build the story that builds your pipeline");
 
   return (
     <div className="home-page relative min-h-screen bg-background text-foreground">

@@ -19,7 +19,7 @@ const serviceOptions = [
 ];
 
 export default function ContactPage() {
-  usePageTitle("Talk to Us — StoryGrid & Co");
+  usePageTitle("Talk to Us — StoryGrid & Co.");
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
 
