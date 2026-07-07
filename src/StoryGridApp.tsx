@@ -5,6 +5,8 @@ import HomePage from "@/pages/HomePage";
 import ApproachPage from "@/pages/ApproachPage";
 import ServicesPage from "@/pages/ServicesPage";
 import TierDetailPage from "@/pages/TierDetailPage";
+import AIAutomationPage from "@/pages/AIAutomationPage";
+import DigitalMarketingPage from "@/pages/DigitalMarketingPage";
 import StoryPage from "@/pages/StoryPage";
 import ForTeamsPage from "@/pages/ForTeamsPage";
 import ResourcesPage from "@/pages/ResourcesPage";
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="/approach" element={<ApproachPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:tierId" element={<TierDetailPage />} />
+          <Route path="/ai-automation" element={<AIAutomationPage />} />
+          <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
           <Route path="/story" element={<StoryPage />} />
           <Route path="/for-teams" element={<ForTeamsPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
