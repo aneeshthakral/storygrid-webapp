@@ -6,6 +6,7 @@ import HomeLightZone from "@/components/HomeLightZone";
 import Reveal from "@/components/Reveal";
 import ShowreelScroll from "@/components/ShowreelScroll";
 import PageRoutingCards from "@/components/PageRoutingCards";
+import ServiceArmsTeaser from "@/components/ServiceArmsTeaser";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 const painPoints = [
@@ -183,6 +184,8 @@ export default function HomePage() {
             </Link>
           </Reveal>
         </section>
+
+        <ServiceArmsTeaser />
 
         <PageRoutingCards />
 

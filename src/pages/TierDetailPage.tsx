@@ -170,7 +170,7 @@ export default function TierDetailPage() {
           <Reveal delay={120}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                to="/contact"
+                to={`/contact?service=narrative&tier=${tier.id}`}
                 className={
                   "btn-radial inline-flex " + (isFeatured ? "btn-radial-solid" : "")
                 }

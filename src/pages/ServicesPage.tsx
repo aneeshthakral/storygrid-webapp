@@ -4,6 +4,7 @@ import PageLayout, { PageHeader } from "@/components/PageLayout";
 import PricingRetainerCard from "@/components/PricingRetainerCard";
 import Reveal from "@/components/Reveal";
 import CurrencyToggle from "@/components/CurrencyToggle";
+import ServiceArmsTeaser from "@/components/ServiceArmsTeaser";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { useCurrency } from "@/hooks/useCurrency";
 import {
@@ -104,8 +105,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <SurfaceSection />
-      <SignalSection />
+      <ServiceArmsTeaser currentId="narrative" />
 
       <section className="border-t border-white/5">
         <div className="mx-auto max-w-7xl px-5 py-24 text-center lg:px-10">
@@ -115,129 +115,16 @@ export default function ServicesPage() {
             </h2>
           </Reveal>
           <Reveal delay={140}>
-            <Link to="/contact" className="btn-radial btn-radial-solid mt-10 inline-flex">
+            <Link
+              to="/contact?service=narrative"
+              className="btn-radial btn-radial-solid mt-10 inline-flex"
+            >
               Book a discovery call
             </Link>
           </Reveal>
         </div>
       </section>
     </PageLayout>
-  );
-}
-
-function SurfaceSection() {
-  const offerings = [
-    {
-      name: "The Narrative Site",
-      desc: "A marketing site or microsite built on the StoryGrid & Co. stack. Story and surface designed as one system.",
-    },
-    {
-      name: "The Narrative App",
-      desc: "iOS and Android. Product or brand app built to carry the narrative through every screen.",
-    },
-    {
-      name: "The Narrative Platform",
-      desc: "Full web platform with backend and integrations. Built for teams who need more than a site.",
-    },
-    {
-      name: "AI Automation & Integrations",
-      desc: "Workflow automation, API integrations, and AI-powered operational systems. The entry point for conventional-industry operators.",
-    },
-  ];
-
-  return (
-    <section className="border-t border-white/5 bg-grain">
-      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
-        <Reveal>
-          <p className="label-mono">Build Arm</p>
-          <h2 className="mt-6 max-w-3xl text-4xl md:text-5xl">Surface</h2>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            The surfaces the story lives on, plus the systems that power them. Story is the core.
-            Surface and Signal make it land.
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            A fully resourced build capability the narrative leads into. Every project is scoped
-            and documented before work begins. No published pricing, no rate-card numbers.
-            Scope and investment are discussed during the proposal conversation.
-          </p>
-        </Reveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {offerings.map((o, i) => (
-            <Reveal key={o.name} delay={i * 70} className="h-full">
-              <article className="card-tech h-full p-7">
-                <h3 className="text-lg text-foreground">{o.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{o.desc}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={200}>
-          <div className="mt-10 flex justify-start">
-            <Link to="/contact" className="btn-radial inline-flex">
-              Book a discovery call
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function SignalSection() {
-  const offerings = [
-    {
-      name: "Answer-Engine Optimization (AEO)",
-      desc: "Visibility inside AI answers and assistants. Position the brand where buyers are increasingly looking first.",
-    },
-    {
-      name: "Search Optimization",
-      desc: "Organic discovery and intent capture. Built on the narrative infrastructure already in place.",
-    },
-    {
-      name: "Digital Media Services",
-      desc: "Content distribution, creative production, and media planning. The story reaches the right audience at the right moment.",
-    },
-    {
-      name: "Meta & Paid Social",
-      desc: "Targeted demand across Meta and beyond. Signal runs after the narrative and the surfaces are in place.",
-    },
-  ];
-
-  return (
-    <section className="border-t border-white/5">
-      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
-        <Reveal>
-          <p className="label-mono">Digital Marketing Arm</p>
-          <h2 className="mt-6 max-w-3xl text-4xl md:text-5xl">Signal</h2>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            The distribution that carries the story to market and brings demand back. Currently
-            rolling out.
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Priced per scope on discovery. Sequenced after the narrative and the surfaces are
-            in place — distribution without a settled story and a built surface to send traffic
-            to is lower-leverage.
-          </p>
-        </Reveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {offerings.map((o, i) => (
-            <Reveal key={o.name} delay={i * 70} className="h-full">
-              <article className="card-tech h-full p-7">
-                <h3 className="text-lg text-foreground">{o.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{o.desc}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={200}>
-          <div className="mt-10 flex justify-start">
-            <Link to="/contact" className="btn-radial inline-flex">
-              Book a discovery call
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
   );
 }
 
@@ -272,7 +159,10 @@ function CommandTierCard({ tier }: { tier: (typeof monthlyRetainers)[number] }) 
           View full tier details →
         </p>
         <div className="relative z-10 mt-8 flex justify-center">
-          <Link to="/contact" className="btn-radial btn-radial-solid inline-flex">
+          <Link
+            to={`/contact?service=narrative&tier=${tier.id}`}
+            className="btn-radial btn-radial-solid inline-flex"
+          >
             Book a discovery call
           </Link>
         </div>
@@ -298,7 +188,10 @@ function OneTimeCard({
         {engagement.description}
       </p>
       <div className="mt-8 flex justify-center">
-        <Link to="/contact" className="btn-radial inline-flex">
+        <Link
+          to={`/contact?service=narrative&tier=${engagement.id}`}
+          className="btn-radial inline-flex"
+        >
           {engagement.cta}
         </Link>
       </div>
